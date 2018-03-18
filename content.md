@@ -281,7 +281,7 @@ then use it inside each page:
 
 ```html
   {# home.html #}
-  {&#37; extends "layout.html" &#37;}
+  <pre>{&#37; extends "layout.html" &#37;}</pre>
   {&#37; block body &#37;}
     <h1>Home!</h1>
   {&#37; endblock &#37;}
