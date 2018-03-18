@@ -208,6 +208,37 @@ def better_hello(name):
 
 ---
 
+## Loops
+
+Repeat a part of the page:
+
+```python
+@app.route("/")
+def list()
+  seq = [1,2,3,4]
+  return render_template('list.html', seq=seq)
+```
+
+```jinja2
+{% for item in seq %}
+    {{ item }}
+{% endfor %}
+```
+
+---
+
+## Alternatives
+
+Show a part of the page depending on a condition:
+
+```jinja2
+{% if something %}
+    yay
+{% endif %}
+```
+
+---
+
 ## MVC
 
 * `hello.py` is the "controller" with the logic
@@ -289,6 +320,20 @@ then use it inside each page:
 
 ---
 
+## Include
+
+If you have reusable components such as:
+
+* Navbar
+* Sidebar
+* Footer
+
+That can be done easily with a layout or a simple include statement:
+
+`{% include 'navbar.html' %}`
+
+---
+
 ## Going online
 
 This is just to give you an insight - by running a web server on our own machine, we're just minutes away to deploy it on the internet.
@@ -338,3 +383,23 @@ Jinja2==2.9.6
 # Day 2
 
 ---
+
+## Parameters
+
+There is two main ways to get parameters in our controller:
+
+* GET: url parameters ("read/search")
+* POST: form parameters ("create/update")
+
+---
+
+### Let's create a search page for Vlerick teachers
+
+### Using librairies
+
+* We've been using "libraries": Flask, Jinja, etc.
+* `pip` allow you to download and install those
+* There are thousands of packages [available](https://pypi.python.org/pypi?%3Aaction=browse)
+* Most work today revolve around using libraries
+
+### Json and APIs

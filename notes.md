@@ -25,6 +25,7 @@ Use layout to abstract those
 
 * Simplest page (static) - create a profile page
 * Example with layout - extend the profile page
+* Use loops and if in templates (show array as table)
 * Example with logic (ex: small calculator)
 * Bonus: Dad jokes (using an external library to get the data)
 
