@@ -261,7 +261,7 @@ We can export all the common part to a common file:
         ...
   </nav>
   <div class="container">
-    {% block body %} {% endblock %}
+    {&#37; block body &#37;} {&#37; endblock &#37;}
   </div>
 </body>
 </html>
@@ -273,18 +273,18 @@ then use it inside each page:
 
 ```html
   {# index.html #}
-  {% extends "layout.html" %}
-  {% block body %}
+  {&#37; extends "layout.html" &#37;}
+  {&#37; block body &#37;}
     <h1>Index!</h1>
-  {% endblock %}
+  {&#37; endblock &#37;}
 ```
 
 ```html
   {# home.html #}
-  {% extends "layout.html" %}
-  {% block body %}
+  {&#37; extends "layout.html" &#37;}
+  {&#37; block body &#37;}
     <h1>Home!</h1>
-  {% endblock %}
+  {&#37; endblock &#37;}
 ```
 
 ---
