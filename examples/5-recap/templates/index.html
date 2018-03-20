@@ -1,0 +1,10 @@
+{# hello.html #} {% extends "layout.html" %} {% block body %}
+<h1>Data</h1>
+
+<ul>
+
+    {% for facility in data %}
+    <li>{{ facility['facility'] }} - {{ facility['funding'] }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

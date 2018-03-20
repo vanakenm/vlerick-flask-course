@@ -10,7 +10,7 @@ def index():
     return render_template('ask.html')
 
 
-@app.route("/candrink")
+@app.route("/candrink", methods=['POST'])
 def hello():
-    age = int(request.args.get('age', ''))
+    age = int(request.form['age'])
     return render_template('candrink.html', age=age)

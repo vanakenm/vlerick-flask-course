@@ -31,8 +31,8 @@ I'm currently CTO of [Bluesquare](http://bluesquarehub.com) and I'm a frequent t
 
 # If we have time
 
-1. Deploy
-2. APIs and JSON
+1.  Deploy
+2.  APIs and JSON
 
 ---
 
@@ -40,9 +40,9 @@ We'll see where we get, so no worry!
 
 Three small things:
 
-- I use the command line a lot - it's good to get used to it
-- Knowing your editor is quite useful - "own your tools"
-- I'll build more examples in very small steps - do the same!
+* I use the command line a lot - it's good to get used to it
+* Knowing your editor is quite useful - "own your tools"
+* I'll build more examples in very small steps - do the same!
 
 ---
 
@@ -177,10 +177,10 @@ Restarting the server each time is not fun - we can use Flask's debug mode to ge
 
 ### Your turn (1)
 
-- Create a very first app
-- You can use the <> url parameter to get an input
-- Pass your name to the url and have it output it
-- Take one of last week programs and output the result on the page instead of in the terminal as before
+* Create a very first app
+* You can use the <> url parameter to get an input
+* Pass your name to the url and have it output it
+* Take one of last week programs and output the result on the page instead of in the terminal as before
 
 ---
 
@@ -248,13 +248,6 @@ def list()
 
 ---
 
-## MVC, again
-
-The controller (the python file) takes care of the data
-The view (the template file) displays it on the screen
-
----
-
 ## Alternatives
 
 Show a part of the page depending on a condition:
@@ -280,11 +273,13 @@ This is also called "separation of concerns" (logic vs presentation)
 
 ### Your turn (2)
 
-- Create a new app (repetition helps!)
-- You can use the <> url parameter to get an input
-- Pass your name to the url and have it output it
-- Take one of last week programs and output the result on the page instead of in the terminal as before
-
+* Create a new app (repetition helps!)
+  * You can use the <> url parameter to get an input
+  * Create a new route per exercise
+* Pass your name to the url and have it output it
+* Redo the "Coin flip tosser" exercise (logic should be in python result as HTML)
+* Redo the "Rock paper scissors" exercise (pass your choice in the url /play/scissors, and have the program show the computer's choice & result)
+* Generally: take some of last week programs and output the result on the page instead of in the terminal as before
 
 ---
 
@@ -376,7 +371,26 @@ That can be done easily with a layout or a simple include statement:
 
 ---
 
-## Parameters and forms
+## Your turn (3)
+
+Time to take back some of the exercises and have them look much better
+
+* Add bootstrap CSS
+* Use a layout so you don't repeat yourself
+* Add a navbar with link to your various examples
+* Add a footer with your name
+
+Basically: get from a basic test to something that looks like a website!
+
+---
+
+## Parameters
+
+We've been very limited in our way of input up to know, using only the url. That's of course not the way it works in real life.
+
+---
+
+## Forms
 
 There is two main ways to get parameters in our controller:
 
@@ -391,13 +405,92 @@ Let's see how google.com handle this (open, type vlerick, check url, update in u
 
 ```html
 <form method="get" action="/candrink">
-    <label for="age">What is your age</label>
-    <input type="text" class="form-control" id="age" name="age" placeholder="Enter your age">
-    <button type="submit" class="btn btn-primary">Check!</button>
+  <label for="age">What is your age?</label>
+  <input type="text" class="form-control" id="age" name="age" placeholder="Enter your age">
+  <button type="submit" class="btn btn-primary">Check!</button>
 </form>
 ```
 
-A form is made of one or more ´<input>´ and one `submit <button>`. It will go to the url defined in the `action` attribute
+A form is made of
+
+* one or more `<input>` with names (!)
+* one `submit`<button>`
+
+---
+
+## GET params
+
+* It will send the user to the url defined in the `action` attribute
+* Parameters will be accessible from the python functions
+
+```python
+@app.route("/candrink")
+def hello():
+    age = int(request.args.get('age', ''))
+```
+
+`request.args.get` is reading the param with that name. It must match the form input name!
+
+---
+
+### POST params
+
+If we switch the form method to POST, the params won't show in the url. To get them from python:
+
+```python
+@app.route("/candrink", methods=['POST'])
+def hello():
+    age = int(request.form['age'])
+    return render_template('candrink.html', age=age)
+```
+
+Use `request.form['paramname']` to access POST data
+
+---
+
+## GET vs POST
+
+* GET for search, read
+* POST for create, update (actually "PUT")
+
+Or: "do you want this info in the url?"
+
+---
+
+## Your turn (4)
+
+You know have all the blocks to develop pretty much what you want.
+
+* Update your "rock paper scissor" to use a proper form to ask the user what he wants to play
+* Create again the "guess a number" application. You'll need the system to remember the hidden number between the request, use a [session](http://flask.pocoo.org/docs/0.12/quickstart/#sessions) for that (start with just a fixed number)
+
+## Big recap: Health data
+
+We'll provide you with a big array of health data from DRC. From there create:
+
+* A "/" page showing the full list of facilities with their data
+* A "/show/<facilityid>" page showing only the data about the given facility
+* Add a search bar on your root page to allow the user to search from specific facilities (using the name)
+
+---
+
+Ask yourself:
+
+* How to represent such as list of data so it's nice to the user?
+* What kind of filters or groups would you want to propose there?
+
+---
+
+The data is stored in a format called "json". You can load it this way:
+
+```python
+import json
+
+with open('data.json') as json_data:
+  data = json.load(json_data)
+```
+
+data will then by a List of Dict - each record of the list is a dictionary, where keys are column names ("facility", "province", "funding", ...)
 
 ---
 
@@ -426,7 +519,6 @@ Jinja2==2.9.6
 
 * Git commit and launch
 
-
 ---
 
 # Your turn!
@@ -435,7 +527,6 @@ Jinja2==2.9.6
 * Example with layout - extend the profile page
 * Example with logic (ex: small calculator)
 * Bonus: Dad jokes (using an external library to get the data)
-
 
 ---
 
