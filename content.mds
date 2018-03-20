@@ -414,7 +414,7 @@ Let's see how google.com handle this (open, type vlerick, check url, update in u
 A form is made of
 
 * one or more `<input>` with names (!)
-* one `submit`<button>`
+* one `submit <button>`
 
 ---
 
