@@ -464,6 +464,8 @@ You know have all the blocks to develop pretty much what you want.
 * Update your "rock paper scissor" to use a proper form to ask the user what he wants to play
 * Create again the "guess a number" application. You'll need the system to remember the hidden number between the request, use a [session](http://flask.pocoo.org/docs/0.12/quickstart/#sessions) for that (start with just a fixed number)
 
+---
+
 ## Big recap: Health data
 
 We'll provide you with a big array of health data from DRC. From there create:
