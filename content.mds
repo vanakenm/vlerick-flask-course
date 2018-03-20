@@ -16,25 +16,25 @@ I'm currently CTO of [Bluesquare](http://bluesquarehub.com) and I'm a frequent t
 
 ---
 
-# Agenda - day 1
+# Agenda
 
 1.  Static vs Dynamic pages
 2.  Model View Controller
 3.  A first Flask application
 4.  Templates and layout
+5.  Parameters and forms
+6.  Using libraries
 
 ---
 
-# Agenda - day 2
+# If we have time
 
-1.  Parameters
-2.  APIs and JSON
-3.  Connecting from Flask
-4.  Using libraries
+1. Deploy
+2. APIs and JSON
 
 ---
 
-# Day 1
+We'll see where we arrive, so no worry!
 
 ---
 
@@ -227,13 +227,22 @@ def list()
 
 ---
 
+## MVC, again
+
+The controller (the python file) takes care of the data
+The view (the template file) displays it on the screen
+
+---
+
 ## Alternatives
 
 Show a part of the page depending on a condition:
 
 ```jinja2
-{% if something %}
-    yay
+{% if age >= 18 %}
+    You can drink!
+{% else %}
+    No drinks for you!
 {% endif %}
 ```
 
@@ -250,7 +259,9 @@ This is also called "separation of concerns" (logic vs presentation)
 
 ## Layouts
 
-When you have several pages, some parts are common like a navbar - we don't want to copy paste it everywhere (why?)
+When you have several pages, some parts are common like a navbar, the html head, etc - we don't want to copy paste it everywhere (why?)
+
+Is a "bootstrap refresher useful"?
 
 ---
 
@@ -334,6 +345,25 @@ That can be done easily with a layout or a simple include statement:
 
 ---
 
+## Parameters and forms
+
+There is two main ways to get parameters in our controller:
+
+* GET: url parameters ("read/search")
+* POST: form parameters ("create/update")
+
+Let's see how google.com handle this (open, type vlerick, check url, update in url)
+
+---
+
+## A search form
+
+```html
+    
+```
+
+---
+
 ## Going online
 
 This is just to give you an insight - by running a web server on our own machine, we're just minutes away to deploy it on the internet.
@@ -359,15 +389,6 @@ Jinja2==2.9.6
 
 * Git commit and launch
 
----
-
-## Day 1 References
-
-* [Flask site](http://flask.pocoo.org/)
-* [Flask mega tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
-* [Jinja templates](http://jinja.pocoo.org)
-* [Deploying a Flask app on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
-* [Python style guide](https://www.python.org/dev/peps/pep-0008/)
 
 ---
 
@@ -378,28 +399,30 @@ Jinja2==2.9.6
 * Example with logic (ex: small calculator)
 * Bonus: Dad jokes (using an external library to get the data)
 
----
-
-# Day 2
-
----
-
-## Parameters
-
-There is two main ways to get parameters in our controller:
-
-* GET: url parameters ("read/search")
-* POST: form parameters ("create/update")
 
 ---
 
 ### Let's create a search page for Vlerick teachers
 
-### Using librairies
+---
+
+### Using libraries
 
 * We've been using "libraries": Flask, Jinja, etc.
 * `pip` allow you to download and install those
 * There are thousands of packages [available](https://pypi.python.org/pypi?%3Aaction=browse)
 * Most work today revolve around using libraries
 
+---
+
 ### Json and APIs
+
+---
+
+## References
+
+* [Flask site](http://flask.pocoo.org/)
+* [Flask mega tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
+* [Jinja templates](http://jinja.pocoo.org)
+* [Deploying a Flask app on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
+* [Python style guide](https://www.python.org/dev/peps/pep-0008/)

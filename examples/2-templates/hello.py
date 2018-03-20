@@ -17,3 +17,14 @@ def hello(name):
 @app.route("/betterhello/<name>")
 def better_hello(name):
     return render_template('hello.html', name=name)
+
+
+@app.route("/drinks/<int:age>")
+def drinks(age):
+    return render_template('candrink.html', age=age)
+
+
+@app.route("/loop")
+def loop():
+    names = ["Bob", "Sarah", "James"]
+    return render_template('names.html', names=names)
