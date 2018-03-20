@@ -2,6 +2,8 @@ class: center, middle
 
 # Web development with Python
 
+http://joyouscoding.com/vlerick-flask-course/
+
 ---
 
 # Hi!
@@ -34,7 +36,13 @@ I'm currently CTO of [Bluesquare](http://bluesquarehub.com) and I'm a frequent t
 
 ---
 
-We'll see where we arrive, so no worry!
+We'll see where we get, so no worry!
+
+Three small things:
+
+- I use the command line a lot - it's good to get used to it
+- Knowing your editor is quite useful - "own your tools"
+- I'll build more examples in very small steps - do the same!
 
 ---
 
@@ -60,6 +68,10 @@ Facebook does not have a singe HTML page on their server for every user - those 
 The content is typically stored in a database and "injected" in the page.
 
 This is what Flask and Python allows you to do (among many other languages).
+
+---
+
+We're going to bridge the gap between lask week Python course and yesterday HTML intro, allowing us to use web pages instead of the terminal for input/output
 
 ---
 
@@ -163,6 +175,15 @@ Restarting the server each time is not fun - we can use Flask's debug mode to ge
 
 ---
 
+### Your turn (1)
+
+- Create a very first app
+- You can use the <> url parameter to get an input
+- Pass your name to the url and have it output it
+- Take one of last week programs and output the result on the page instead of in the terminal as before
+
+---
+
 ## Templates (why)
 
 We could continue that same way and emit proper HTML:
@@ -254,6 +275,16 @@ Show a part of the page depending on a condition:
 * `hello.html` is the "view" with how it shows on the screen
 
 This is also called "separation of concerns" (logic vs presentation)
+
+---
+
+### Your turn (2)
+
+- Create a new app (repetition helps!)
+- You can use the <> url parameter to get an input
+- Pass your name to the url and have it output it
+- Take one of last week programs and output the result on the page instead of in the terminal as before
+
 
 ---
 
@@ -356,11 +387,17 @@ Let's see how google.com handle this (open, type vlerick, check url, update in u
 
 ---
 
-## A search form
+## A form
 
 ```html
-    
+<form method="get" action="/candrink">
+    <label for="age">What is your age</label>
+    <input type="text" class="form-control" id="age" name="age" placeholder="Enter your age">
+    <button type="submit" class="btn btn-primary">Check!</button>
+</form>
 ```
+
+A form is made of one or more ´<input>´ and one `submit <button>`. It will go to the url defined in the `action` attribute
 
 ---
 
