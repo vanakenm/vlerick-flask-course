@@ -52,13 +52,6 @@ So: <em>it's alway ok to ask me to repeat/explain again</em>
 
 ---
 
-## If we have time
-
-1.  Deploy
-2.  APIs and JSON
-
----
-
 We'll see where we get, so no worry!
 Some insights before betting started
 
@@ -134,14 +127,11 @@ What happens when you search for "Vlerick" on google?
 
 ---
 
-Static web page schema
+![](images/static-web.png)
 
 ---
 
-- HTML, CSS, JavaScript
-  - Content
-  - Style
-  - Making things move (We're not talking about javascript in this course (it's a full other language)
+![](https://simonswain.com/wdyk/images/html-css-js.png)  
 
 ---
 
@@ -368,13 +358,6 @@ Can be embedded, usually uses a separated file with a ".css" extension
 
 ---
 
-### CSS Properties
-  - color and background color
-  - font (size and others)
-  - margin/padding/borders
-
----
-
 ### Applying CSS
 
 CSS can be used on:
@@ -404,12 +387,78 @@ p {
 
 ---
 
+## CSS Properties
+
+---
+
+### Size and position
+
+
+```css
+  width: 100px;
+  heigth: 50px;
+```
+
+Can use <em>em</em> or <em>%</em> too.
+
+---
+
+### Color and background color
+
+```css
+  color: red;
+  background-color: #AABBCC;
+```
+
+---
+
+### Font
+
+```css
+  font-size: 14;
+  font-family: Arial;
+  font-variant: small-caps;
+  text-decoration: underline;
+```
+
+---
+
+### Margins & friends
+
+```css
+margin: 10px;
+margin: 10px 0px 5px 15px; /* Top, Right, Bottom, Left */
+border: 1px solid blue; /* Width, Type, Color */
+border-radius: 5px;
+```
+
+Space is as important as content for readability
+
+---
+
 ### Element Positionning
-  - by default div goes one after the other
-  - display: block, inline, none + grid and flex
-  - position (use MDN examples): 
-  - this is tricky especially in one half day
-    - we're going to cheat a bit
+  
+* By default div goes one after the other verticaly.
+* Inline vs Box
+
+```css
+display: block;
+display: inline;
+display: none;
+```
+
+---
+
+### Position
+  
+```css
+position: relative;
+position: absolute;
+position: sticky;
+```
+
+
+This is tricky especially in one half day - we're going to cheat a bit
 
 ---
 
@@ -423,21 +472,16 @@ Add some style to your profile page
 
 - [CSS on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 - [Positioning](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning)
-- [Grid on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
 - [Steal from CodePen](https://codepen.io)
-- Look on the web
-
----
-
-## Tools
-
-- Python HTTPServer
-- Web inspector
-- Auto reload with livejs
+- Look on the web using the inspector
 
 ---
 
 ## CSS Frameworks
+
+---
+
+What? A set of predefined markup (HTML) and associated CSS classes
 
 ---
 
@@ -468,7 +512,7 @@ Check at [Get Bootstrap](getbootstrap.com)
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 ```
 
---- 
+---
 
 ### Example
 
@@ -476,8 +520,10 @@ Check at [Get Bootstrap](getbootstrap.com)
 - Title, menubar, margins, large set of content, mutli columns, forms
 
 ---
-- Bootstrap
-- Your turn: redo your profile page
+
+### Your turn
+
+Improve your page using bootstrap
 
 ---
 
@@ -922,6 +968,20 @@ Let's port it on the web!
 
 ---
 
+## References for Flask
+
+* [Flask site](http://flask.pocoo.org/)
+* [Flask mega tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
+* [Jinja templates](http://jinja.pocoo.org)
+* [Deploying a Flask app on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
+* [Python style guide](https://www.python.org/dev/peps/pep-0008/)
+
+---
+
+# For the curious...
+
+---
+
 ## Going online
 
 This is just to give you an insight - by running a web server on our own machine, we're just minutes away to deploy it on the internet.
@@ -957,13 +1017,3 @@ Jinja2==2.9.6
 * `pip` allow you to download and install those
 * There are thousands of packages [available](https://pypi.python.org/pypi?%3Aaction=browse)
 * Most work today revolve around using libraries
-
----
-
-## References for Flask
-
-* [Flask site](http://flask.pocoo.org/)
-* [Flask mega tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
-* [Jinja templates](http://jinja.pocoo.org)
-* [Deploying a Flask app on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python#introduction)
-* [Python style guide](https://www.python.org/dev/peps/pep-0008/)
