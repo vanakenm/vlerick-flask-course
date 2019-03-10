@@ -1,0 +1,17 @@
+/* Styling all <p> elements */
+
+p {
+  font-size: 24px;
+}
+
+/* Styling element with id = main */
+
+#main {
+  color: brown;
+}
+
+/* Styling all elements with class = odd */
+
+.odd {
+  background-color: lightgrey;
+}

@@ -12,24 +12,47 @@ I'm [Martin](http://joyouscoding.com) - I'm an economist who has been building a
 
 I'm currently CTO of [Bluesquare](http://bluesquarehub.com) and I'm a frequent teacher at [LeWagon](https://lewagon.com).
 
+I don't think everyone should learn to code but I do think <em>software is/will impact all your careers</em> so knowing something about it is probably a good idea
+
 ---
 
-(I also speak fast and have quite a bad English accent - enjoy!)
+I also speak fast and have quite a bad English accent - enjoy!
+
+So: <em>it's alway ok to ask me to repeat/explain again</em>
 
 ---
 
 # Agenda
 
-1.  Static vs Dynamic pages
-2.  Model View Controller
-3.  A first Flask application
-4.  Templates and layout
-5.  Parameters and forms
-6.  Using libraries
+---
+
+## Monday
+
+1. The Web
+2. HTML
+3. CSS
+4. Bootstrap
 
 ---
 
-# If we have time
+## Tuesday
+
+1.  Dynamic pages
+2.  Model View Controller
+3.  A first Flask application
+4.  Templates and layout
+
+---
+
+## Wednesday
+
+1.  Parameters and forms
+2.  Using libraries
+3.  Big recap exercise
+
+---
+
+## If we have time
 
 1.  Deploy
 2.  APIs and JSON
@@ -37,16 +60,432 @@ I'm currently CTO of [Bluesquare](http://bluesquarehub.com) and I'm a frequent t
 ---
 
 We'll see where we get, so no worry!
-
-Three small things:
-
-* I use the command line a lot - it's good to get used to it
-* Knowing your editor is quite useful - "own your tools"
-* I'll build more examples in very small steps - do the same!
+Some insights before betting started
 
 ---
 
-## Static and Dynamic pages
+Knowing your editor is quite useful - "own your tools"
+
+---
+
+I'll build my examples in very small steps - do the same!
+
+---
+
+My slide have most of the code examples that I type - so use the lecture time to understand, and take the reference when you need it
+
+---
+
+Programming is a craft, not a science - you have to do it to understand it
+
+---
+
+I've been doing that for 20 years and I still google for even simple things. 
+
+Do the same. 
+
+[Stack Overflow is your friend](stackoverflow.com)
+
+---
+
+# The Web, HTML and CSS
+
+---
+
+## The Web
+
+
+---
+
+### Why and alternatives
+  
+- Desktop
+- Mobile
+- -> diffusion via the web is incredible
+
+---
+
+### History and structure
+
+Arpanet: US funded resiliant network
+
+Serie of services running on top of the same interconnected infrastructure (Internet):
+
+- Web: HTTP
+- Email: IMAP
+- File transfert: FTP
+
+---
+
+### How it works
+
+What happens when you search for "Vlerick" on google?
+
+- Url
+- Request 
+- Response (example from google search)
+
+---
+
+### Client and server side
+
+- <em>Client</em>: A "browser" is a desktop program used to make requests
+- <em>Server</em>: A computer answering requests and returning (typically) HTML pages
+
+---
+
+Static web page schema
+
+---
+
+- HTML, CSS, JavaScript
+  - Content
+  - Style
+  - Making things move (We're not talking about javascript in this course (it's a full other language)
+
+---
+
+## HTML
+
+---
+
+- Define content and structure ("what")
+- Use .html extension
+- Simplest example
+
+```html
+  Hi!
+```
+
+---
+
+### Basic structure
+
+```html
+  <html>
+    <head>
+      <title>My first page</title>
+    </head>
+    <body>
+      <h1>Hi!</h1>
+      <p>This is my first ever page</p>
+    </body>
+  </html>
+```
+
+---
+
+### Tags
+
+HTML uses <em>tags</em> with always the same structure:
+
+```html
+  <h1>Hello</h1>
+```
+
+&lt;h1&gt; is the <em>opening</em> tag here
+
+&lt;/h1&gt; is the <em>closing</em> tag here
+
+<em>Hello</em> is the content (what you see on the screen)
+
+---
+
+### Header and Body
+
+```html
+  <html>
+    <head>
+       ... "meta data"
+    </head>
+    <body>
+      ... what is seen on the page
+    </body>
+  </html>
+```
+
+---
+
+### Why a header?
+
+- Page title
+- Keywords and description (what Google shows)
+- Link to other resources (wait a bit)
+
+---
+
+
+### Tags (1)
+
+<em>p</em>: paragraph
+
+<em>h1-6</em>: headings
+
+```html
+  <h1>Hi!<h1>
+  <h2>Welcome on my page</h2>
+  <p>Here you'll find a lot of info about what I do</p>
+  <p>Such as the courses I teach</p>
+```
+
+---
+
+### Tags (2)
+
+<em>em, strong</em>: emphasis, strong 
+
+<em>img</em>: image
+
+<em>a</em>: anchor - a link
+
+```html
+  <p>Here you'll find <em>a lot of info</em> about what I do</p>
+  <a href="joyouscoding.com">Link to my site</a>
+  <img src="https://joyouscoding.com/img/martin.png" alt="Me">
+```
+
+Note that:
+- img has no closing tag
+- you can nest tags
+
+---
+
+### Tags (3)
+<em>ul/ol/li</em>: lists
+
+```html
+  <ul>
+    <li>Ruby</li>
+    <li>Intro to the web</li>
+    <li>JavaScript</li>
+    <li>Live in a startup</li>
+  </ul>
+```
+
+---
+  
+### Tags (4)
+<em>table</em>: table (with th/tr/td)
+
+```html
+<table>
+  <thead>
+    <th>Course</th><th>ECTS</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>JavaScript</td><td>25</td>
+    </tr>
+    <tr>
+      <td>Ruby</td><td>12</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+---
+  
+### Tags (5)
+
+<em>div<em>: divide your content in sections
+
+---
+
+### Your turn - create your own page
+
+- Try to use a maximum of the tags we've seen...
+- Go step by step, reloading/testing along the way
+
+---
+
+### Forms
+
+What we've seen only allow to read data.
+To send data, we need forms - fields that allow the user to fill in data
+
+---
+
+### Structure:
+
+```html
+<form action="">
+  <div><label for="name">Name:</label> <input type="text"></div>
+  <div><label for="email">Email:</label> <input type="email"></div>
+  <button type="submit">Go</button>
+</form>
+```
+
+---
+
+### Form tags
+
+Type:
+- text
+- email
+- textarea
+
+---
+
+### Select
+
+```html
+<select id="simple" name="simple">
+  <option>Banana</option>
+  <option>Cherry</option>
+  <option>Lemon</option>
+</select>
+```
+
+---
+
+### Form reference
+
+[Form on MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/The_native_form_widgets)
+
+---
+
+### Your turn
+
+Add a contact form to your page
+
+---
+
+## CSS
+
+- Define look (color, style, positioning, ...)
+- What's a page without CSS?
+
+---
+
+Can be embedded, usually uses a separated file with a ".css" extension
+
+```html
+  <head>
+    ...
+    <link rel="stylesheet" href="style.css" />
+  </head>
+```
+
+---
+
+### CSS Properties
+  - color and background color
+  - font (size and others)
+  - margin/padding/borders
+
+---
+
+### Applying CSS
+
+CSS can be used on:
+
+- All elements with the same tag (ex: all h1)
+- A specific element using an id
+- A set of elements sharing a class
+
+---
+
+```css
+/* Styling all <p> elements */
+p {
+  font-size: 24px;
+}
+
+/* Styling element with id = main */
+#main {
+  color: brown;
+}
+
+/* Styling all elements with class = odd */
+.odd {
+  background-color: lightgrey;
+}
+```
+
+---
+
+### Element Positionning
+  - by default div goes one after the other
+  - display: block, inline, none + grid and flex
+  - position (use MDN examples): 
+  - this is tricky especially in one half day
+    - we're going to cheat a bit
+
+---
+
+### Your turn
+
+Add some style to your profile page
+
+---
+
+## References for CSS
+
+- [CSS on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+- [Positioning](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning)
+- [Grid on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
+- [Steal from CodePen](https://codepen.io)
+- Look on the web
+
+---
+
+## Tools
+
+- Python HTTPServer
+- Web inspector
+- Auto reload with livejs
+
+---
+
+## CSS Frameworks
+
+---
+
+Why? Crafting CSS by hand is time consuming if you don't know it very well.
+
+Most of us like to use preexisting component and "just" organise them
+
+---
+
+Many options: Bootstrap, Material UI, Semantic UI, Foundation, ...
+
+---
+
+### Bootstrap
+
+- Good list of components
+- Sensible defaults
+- Easy to organise components in lines/columns
+- Well supported and mature
+
+---
+
+### Install
+
+Check at [Get Bootstrap](getbootstrap.com)
+
+```html
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+```
+
+--- 
+
+### Example
+
+- Pre/post bootstrap
+- Title, menubar, margins, large set of content, mutli columns, forms
+
+---
+- Bootstrap
+- Your turn: redo your profile page
+
+---
+
+# Python and the Web
+
+---
+
+## Dynamic pages
 
 Difference between:
 
@@ -277,6 +716,10 @@ This is also called "separation of concerns" (logic vs presentation)
   * You can use the <> url parameter to get an input
   * Create a new route per exercise
 * Pass your name to the url and have it output it
+
+---
+
+
 * Redo the "Coin flip tosser" exercise (logic should be in python result as HTML)
 * Redo the "Rock paper scissors" exercise (pass your choice in the url /play/scissors, and have the program show the computer's choice & result)
 * Generally: take some of last week programs and output the result on the page instead of in the terminal as before
@@ -286,8 +729,6 @@ This is also called "separation of concerns" (logic vs presentation)
 ## Layouts
 
 When you have several pages, some parts are common like a navbar, the html head, etc - we don't want to copy paste it everywhere (why?)
-
-Is a "bootstrap refresher useful"?
 
 ---
 
@@ -384,6 +825,10 @@ Basically: get from a basic test to something that looks like a website!
 
 ---
 
+# Parmeters and forms
+
+---
+
 ## Parameters
 
 We've been very limited in our way of input up to know, using only the url. That's of course not the way it works in real life.
@@ -466,33 +911,14 @@ You know have all the blocks to develop pretty much what you want.
 
 ---
 
-## Big recap: Health data
+## Big recap: Python Recap on the Web
 
-We'll provide you with a big array of health data from DRC. From there create:
+Remember the python recap exercise?
+Let's port it on the web!
 
-* A "/" page showing the full list of facilities with their data
-* A "/show/<facilityid>" page showing only the data about the given facility
-* Add a search bar on your root page to allow the user to search from specific facilities (using the name)
-
----
-
-Ask yourself:
-
-* How to represent such as list of data so it's nice to the user?
-* What kind of filters or groups would you want to propose there?
-
----
-
-The data is stored in a format called "json". You can load it this way:
-
-```python
-import json
-
-with open('data.json') as json_data:
-  data = json.load(json_data)
-```
-
-data will then by a List of Dict - each record of the list is a dictionary, where keys are column names ("facility", "province", "funding", ...)
+- Actions becomes links
+- Asking question becomes using a form
+- Outputs are given using HTML and CSS
 
 ---
 
@@ -500,9 +926,9 @@ data will then by a List of Dict - each record of the list is a dictionary, wher
 
 This is just to give you an insight - by running a web server on our own machine, we're just minutes away to deploy it on the internet.
 
-Let's try it out!
+---
 
-???
+Let's try it out!
 
 * Install gunicorn
 
@@ -511,6 +937,8 @@ pip install gunicorn
 * Add a Procfile
 
 web: gunicorn hello:app
+
+---
 
 * Add minimal requirements.txt file
 
@@ -523,19 +951,6 @@ Jinja2==2.9.6
 
 ---
 
-# Your turn!
-
-* Simplest page (static) - create a profile page
-* Example with layout - extend the profile page
-* Example with logic (ex: small calculator)
-* Bonus: Dad jokes (using an external library to get the data)
-
----
-
-### Let's create a search page for Vlerick teachers
-
----
-
 ### Using libraries
 
 * We've been using "libraries": Flask, Jinja, etc.
@@ -545,11 +960,7 @@ Jinja2==2.9.6
 
 ---
 
-### Json and APIs
-
----
-
-## References
+## References for Flask
 
 * [Flask site](http://flask.pocoo.org/)
 * [Flask mega tutorial](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world)
