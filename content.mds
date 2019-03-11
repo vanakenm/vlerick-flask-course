@@ -514,10 +514,13 @@ Check at [Get Bootstrap](getbootstrap.com)
 
 ---
 
-### Example
+### Examples
 
-- Pre/post bootstrap
-- Title, menubar, margins, large set of content, mutli columns, forms
+- Container, text and basic typography
+- Tables
+- Columns
+- Nav
+- Forms
 
 ---
 
@@ -553,6 +556,10 @@ Facebook does not have a singe HTML page on their server for every user - those 
 The content is typically stored in a database and "injected" in the page.
 
 This is what Flask and Python allows you to do (among many other languages).
+
+---
+
+![Dynamic web](images/dynamic-web.png)
 
 ---
 
